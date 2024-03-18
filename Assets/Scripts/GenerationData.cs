@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +9,13 @@ public class GenerationData : ScriptableObject
     public List<string> MaleNames;
     public List<string> FemaleNames;
 
+    public List<string> Surnames;
+
     [Header("Sprites")]
     public List<Sprite> MaleSprites;
     public List<Sprite> FemaleSprites;
 
     [Header("Other")]
+    [Range(0, 1)]public float ProbabilityOfBeingLate;
     public List<string> Excuses;
-    public float ProbabilityOfBeingLate;
 }

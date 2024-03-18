@@ -12,9 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca16fd679685ce46853b36e81cfa3d0, type: 3}
   m_Name: GenerationData
   m_EditorClassIdentifier: 
-  MaleNames: []
-  FemaleNames: []
-  MaleSprites: []
-  FemaleSprites: []
-  Excuses: []
-  ProbabilityOfBeingLate: 0
+  MaleNames:
+  - John
+  - Carm
+  - Alex
+  FemaleNames:
+  - Jenny
+  - Poppy
+  - Mia
+  - Nency
+  - Tailor
+  Surnames:
+  - Smith
+  - Swift
+  - Macklonny
+  MaleSprites:
+  - {fileID: 21300000, guid: f3b64239ba8c9dd44ad9e87ac2fdeebf, type: 3}
+  FemaleSprites:
+  - {fileID: 21300000, guid: f3b64239ba8c9dd44ad9e87ac2fdeebf, type: 3}
+  LateTime: 9:00
+  ProbabilityOfBeingLate: 0.5
+  Excuses:
+  - I fed my dog
+  - I ate hambugers
+  - I wanted to sleep more
