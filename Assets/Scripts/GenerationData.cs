@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GenerationData", menuName = "ScriptableObjects/GenerationData", order = 1)]
+[CreateAssetMenu(fileName = "GenerationData", menuName = "ScriptableObjects/GenerationData", order = 2)]
 public class GenerationData : ScriptableObject
 {
     [Header("Names")]
