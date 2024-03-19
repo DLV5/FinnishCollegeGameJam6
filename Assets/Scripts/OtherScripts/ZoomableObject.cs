@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class IDCard : MonoBehaviour, IInteractable
+public class ZoomableObject : MonoBehaviour, IInteractable
 {
     private Vector3 _initialPosition;
     private Quaternion _initialRotation;
