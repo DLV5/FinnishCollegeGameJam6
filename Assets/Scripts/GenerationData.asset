@@ -30,7 +30,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f3b64239ba8c9dd44ad9e87ac2fdeebf, type: 3}
   FemaleSprites:
   - {fileID: 21300000, guid: f3b64239ba8c9dd44ad9e87ac2fdeebf, type: 3}
-  LateTime: 9:00
   ProbabilityOfBeingLate: 0.5
   Excuses:
   - I fed my dog

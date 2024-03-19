@@ -1,16 +1,22 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
 using UnityEngine;
 
 public class EmployeeGenerator : MonoBehaviour
 {
-    private DateTime deadline = new DateTime(1, 1, 1, 9, 0, 0);
-    private int minutesRange = 30;
+    private const int minutesRange = 30;
+
+    private DateTime deadline;
 
     [SerializeField] private GenerationData _data;
+    [SerializeField] private LevelData _levelData;
 
-    public List<Employee> Employees {  get; private set; } = new List<Employee>();
+    public Queue<Employee> Employees {  get; private set; } = new Queue<Employee>();
+
+    private void Awake()
+    {
+        deadline = new DateTime(1, 1, 1, _levelData.DeadlineTimeHours, _levelData.DeadlineTimeMinutes, 0);
+    }
 
     public void GenerateEmployee()
     {
@@ -41,7 +47,12 @@ public class EmployeeGenerator : MonoBehaviour
             arrivalTime, 
             IsEmployeeLate(arrivalTime), 
             excuse);
-        Employees.Add(worker);
+        Employees.Enqueue(worker);
+    }
+
+    public Employee GetNextEmployee()
+    {
+        return Employees.Dequeue();
     }
 
     private DateTime GetRandomData()
@@ -56,7 +67,9 @@ public class EmployeeGenerator : MonoBehaviour
     private DateTime GetRandomTime(float probabilityOfBeingLate)
     {
         DateTime randomTime = deadline;
-        randomTime = randomTime.AddMinutes(UnityEngine.Random.Range(0, minutesRange) - (1 - probabilityOfBeingLate) * minutesRange);
+        float minutes = UnityEngine.Random.Range(0, minutesRange) - (1 - probabilityOfBeingLate) * minutesRange;
+
+        randomTime = randomTime.AddMinutes(minutes);
 
         return randomTime;
     }

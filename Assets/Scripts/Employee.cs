@@ -26,8 +26,6 @@ public class Employee
         ReasonForBeingLate = reasonForBeingLate;
         
         IsLate = isLate;
-
-        DebugShowEmployee();
     }
 
     public void DebugShowEmployee()
