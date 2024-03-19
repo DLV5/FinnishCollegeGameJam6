@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactor : MonoBehaviour
@@ -17,7 +15,7 @@ public class Interactor : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 Debug.Log(hit.collider.gameObject.name);
-                if (hit.collider.TryGetComponent(out IInteractable movableObject))
+                if (hit.collider.gameObject.transform.root.gameObject.TryGetComponent(out IInteractable movableObject))
                 {
                     Debug.Log("hit intercatable");
                     movableObject.Interact();
