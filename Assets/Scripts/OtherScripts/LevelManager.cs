@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -7,11 +8,13 @@ public class LevelManager : MonoBehaviour
     public event Action<Employee> OnNewEmployeeCame;
 
     [SerializeField] private EmployeeGenerator _employeeGenerator;
-    [SerializeField] private DocumentsGenerator _documentsGenerator;
+    [SerializeField] private ScheduleGenerator _scheduleGenerator;
 
     [SerializeField] private LevelData _levelData;
 
     [SerializeField] private FirstPersonCamera _camera;
+
+    [SerializeField] private TMP_Text _resultText;
 
     private GameObject _winScreen;
     private GameObject _loseScreen;
@@ -39,7 +42,8 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         _winScreen = GameObject.Find("WinScreen");
-        _loseScreen = GameObject.Find("LoseScreen");
+        _loseScreen = GameObject.Find("LoseScreen"); 
+        _resultText = GameObject.Find("ResultText").GetComponent<TMP_Text>();
 
         _winScreen.SetActive(false);
         _loseScreen.SetActive(false);
@@ -59,6 +63,8 @@ public class LevelManager : MonoBehaviour
         _currentEmployee = _employeeGenerator.GetNextEmployee();
         OnNewEmployeeCame?.Invoke(_currentEmployee);
         _currentEmployee.DebugShowEmployee();
+
+        _scheduleGenerator.InitializeSchedule(_employeeGenerator.Employees);
     }
 
     public void DecideFateOfTheWorker(bool shouldBeFired)
@@ -66,10 +72,12 @@ public class LevelManager : MonoBehaviour
         if(_currentEmployee.IsLate == shouldBeFired)
         {
             Debug.LogWarning("Correct");
+            _resultText.text = "Correct";
         } else
         {
             Debug.LogWarning("Incorrect");
             Debug.LogWarning("-1HP");
+            _resultText.text = "Incorrect" + " -1HP";
             PlayerHealth--;
         }
         try
