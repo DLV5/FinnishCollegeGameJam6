@@ -4,6 +4,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static event Action OnPlayerDied;
+    public static event Action OnNewEmployeeCame;
 
     [SerializeField] private EmployeeGenerator _employeeGenerator;
     [SerializeField] private LevelData _levelData;
@@ -63,5 +64,7 @@ public class LevelManager : MonoBehaviour
         }
 
         _currentEmployee.DebugShowEmployee();
+
+        OnNewEmployeeCame?.Invoke();
     }
 }

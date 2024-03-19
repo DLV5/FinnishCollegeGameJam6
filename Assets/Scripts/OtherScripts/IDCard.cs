@@ -32,11 +32,13 @@ public class IDCard : MonoBehaviour, IInteractable
        }
   
     }
+
     public void Interact()
     {
         GameManager.Instance.IsCurrentlyIntercating = true;
         StartCoroutine(ZoomToCamera());
     }
+
     IEnumerator ZoomToCamera()
     {
         float percentageComplete = 0f;
