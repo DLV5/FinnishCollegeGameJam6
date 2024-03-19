@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -424,7 +424,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fd69d6546d1d2f468de73fd1c828dcd, type: 2}
   m_sharedMaterial: {fileID: 6034367261778811861, guid: 7fd69d6546d1d2f468de73fd1c828dcd, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 6034367261778811861, guid: 7fd69d6546d1d2f468de73fd1c828dcd, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1829,7 +1830,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fd69d6546d1d2f468de73fd1c828dcd, type: 2}
   m_sharedMaterial: {fileID: 6034367261778811861, guid: 7fd69d6546d1d2f468de73fd1c828dcd, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 6034367261778811861, guid: 7fd69d6546d1d2f468de73fd1c828dcd, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2229,7 +2231,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb83ba9b17267514db5b946b95e98366, type: 2}
   m_sharedMaterial: {fileID: 6034367261778811861, guid: bb83ba9b17267514db5b946b95e98366, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 6034367261778811861, guid: bb83ba9b17267514db5b946b95e98366, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2817,7 +2820,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fd69d6546d1d2f468de73fd1c828dcd, type: 2}
   m_sharedMaterial: {fileID: 6034367261778811861, guid: 7fd69d6546d1d2f468de73fd1c828dcd, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 6034367261778811861, guid: 7fd69d6546d1d2f468de73fd1c828dcd, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
