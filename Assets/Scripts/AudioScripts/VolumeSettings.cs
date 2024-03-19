@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class HS_VolumeSettings : MonoBehaviour
+public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
     [Header("Sliders")]

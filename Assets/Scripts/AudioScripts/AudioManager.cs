@@ -5,6 +5,8 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioMixer _audioMixer;
+    [SerializeField] private AudioSource _sfxSource;
+    [SerializeField] private AudioSource _musicSource;
 
     private static AudioManager _instance;
     public static AudioManager Instance { get { return _instance; } }
@@ -43,7 +45,7 @@ public class AudioManager : MonoBehaviour
     /// NOT case or whitespaces sensitive param
     /// </summary>
     /// <param name="audioName"></param>
-    public AudioClip GetAudio(string audioName)
+    private AudioClip GetAudio(string audioName)
     {
         string remake = audioName.ToLower().Trim(); // clear (no whitespaces, no uppercase) version of AudioCLip name
         if (_audios.TryGetValue(remake, out AudioClip clip))
@@ -52,5 +54,17 @@ public class AudioManager : MonoBehaviour
         }
         else
             return null;
+    }
+    public void PlaySFX(string audioName)
+    {
+        _sfxSource.clip = (GetAudio(audioName));
+        if (_sfxSource.clip != null)
+            _sfxSource.Play();
+    }
+    public void PlayMusic(string audioName)
+    {
+        _musicSource.clip = (GetAudio(audioName));
+        if (_sfxSource.clip != null)
+            _musicSource.Play();
     }
 }
