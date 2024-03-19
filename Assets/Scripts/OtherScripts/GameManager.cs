@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(this);
     }
     public bool IsCurrentlyIntercating;
     public float ZoomSpeed;

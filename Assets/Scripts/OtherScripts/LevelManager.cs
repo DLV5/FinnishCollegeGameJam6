@@ -11,8 +11,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private FirstPersonCamera _camera;
 
-    [SerializeField] private GameObject _winScreen;
-    [SerializeField] private GameObject _loooseScreen;
+    private GameObject _winScreen;
+    private GameObject _loseScreen;
 
     private int _playerHealth;
     public int PlayerHealth {
@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
             if(_playerHealth <= 0)
             {
                 Debug.LogWarning("Show lose screen");
-                _loooseScreen.SetActive(true);
+                _loseScreen.SetActive(true);
                 UnlockCursorAndFreezeCamera();
                 OnPlayerDied?.Invoke();
             }
@@ -36,6 +36,12 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        _winScreen = GameObject.Find("WinScreen");
+        _loseScreen = GameObject.Find("LoseScreen");
+
+        _winScreen.SetActive(false);
+        _loseScreen.SetActive(false);
+
         PlayerHealth = _levelData.PlayerHealthPoints;
 
         InitializeEmployees();
