@@ -4,10 +4,15 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static event Action OnPlayerDied;
-    public static event Action OnNewEmployeeCame;
+    public event Action<Employee> OnNewEmployeeCame;
 
     [SerializeField] private EmployeeGenerator _employeeGenerator;
     [SerializeField] private LevelData _levelData;
+
+    [SerializeField] private FirstPersonCamera _camera;
+
+    [SerializeField] private GameObject _winScreen;
+    [SerializeField] private GameObject _loooseScreen;
 
     private int _playerHealth;
     public int PlayerHealth {
@@ -18,12 +23,16 @@ public class LevelManager : MonoBehaviour
             if(_playerHealth <= 0)
             {
                 Debug.LogWarning("Show lose screen");
+                _loooseScreen.SetActive(true);
+                UnlockCursorAndFreezeCamera();
                 OnPlayerDied?.Invoke();
             }
         }
     }
 
     private Employee _currentEmployee;
+
+    public Employee CurrentEmployee { get => _currentEmployee; private set { _currentEmployee = value;} }
 
     private void Start()
     {
@@ -40,6 +49,7 @@ public class LevelManager : MonoBehaviour
         }
 
         _currentEmployee = _employeeGenerator.GetNextEmployee();
+        OnNewEmployeeCame?.Invoke(_currentEmployee);
         _currentEmployee.DebugShowEmployee();
     }
 
@@ -61,10 +71,19 @@ public class LevelManager : MonoBehaviour
         catch
         {
             Debug.LogWarning("Show win screen");
+            _winScreen.SetActive(true);
+            UnlockCursorAndFreezeCamera();
         }
 
         _currentEmployee.DebugShowEmployee();
 
-        OnNewEmployeeCame?.Invoke();
+        OnNewEmployeeCame?.Invoke(_currentEmployee);
+    }
+
+    private void UnlockCursorAndFreezeCamera()
+    {
+        _camera.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
