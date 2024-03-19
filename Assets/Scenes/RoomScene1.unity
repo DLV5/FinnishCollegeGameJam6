@@ -1856,6 +1856,7 @@ GameObject:
   - component: {fileID: 886114020856446194}
   - component: {fileID: 8063660511320864585}
   - component: {fileID: 1192313384041342845}
+  - component: {fileID: 8063660511320864586}
   m_Layer: 0
   m_Name: PRINCIPALOFFICEdemoscene_17
   m_TagString: Untagged
@@ -2071,6 +2072,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4612190821393356045}
   m_Mesh: {fileID: 7667910886194359986, guid: a096178855ab79141ae19a08a31949c9, type: 3}
+--- !u!114 &8063660511320864586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612190821393356045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!23 &8077863782926312307
 MeshRenderer:
   m_ObjectHideFlags: 0
