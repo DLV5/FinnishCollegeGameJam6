@@ -4,9 +4,9 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioMixer _audioMixer;
     [SerializeField] private AudioSource _sfxSource;
     [SerializeField] private AudioSource _musicSource;
+    [SerializeField] private AudioMixer _audioMixer;
 
     private static AudioManager _instance;
     public static AudioManager Instance { get { return _instance; } }

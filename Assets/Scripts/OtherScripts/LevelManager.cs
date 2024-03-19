@@ -59,8 +59,6 @@ public class LevelManager : MonoBehaviour
         _currentEmployee = _employeeGenerator.GetNextEmployee();
         OnNewEmployeeCame?.Invoke(_currentEmployee);
         _currentEmployee.DebugShowEmployee();
-
-        _documentsGenerator.InitializeDocument();
     }
 
     public void DecideFateOfTheWorker(bool shouldBeFired)

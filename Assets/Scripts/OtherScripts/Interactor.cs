@@ -4,7 +4,7 @@ public class Interactor : MonoBehaviour
 {
     private void Update()
     {
-        if (GameManager.Instance.IsCurrentlyIntercating)
+        if (GameManager.Instance != null && GameManager.Instance.IsCurrentlyIntercating)
             return;
 
         if (Input.GetMouseButtonDown(0))
