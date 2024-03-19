@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
-    private Vector3 _screenPosition;
-
     private void Update()
     {
         if (GameManager.Instance.IsCurrentlyIntercating)
@@ -13,13 +9,13 @@ public class Interactor : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            _screenPosition = Input.mousePosition;
-            Ray ray = Camera.main.ScreenPointToRay(_screenPosition);
+            Ray ray = new Ray(transform.position, transform.forward);
             Debug.DrawRay(ray.origin, ray.direction, Color.red);
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (hit.collider.TryGetComponent<IInteractable>(out IInteractable movableObject))
+                Debug.Log(hit.collider.gameObject.name);
+                if (hit.collider.gameObject.transform.root.gameObject.TryGetComponent(out IInteractable movableObject))
                 {
                     Debug.Log("hit intercatable");
                     movableObject.Interact();
