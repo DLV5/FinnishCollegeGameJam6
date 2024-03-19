@@ -9,7 +9,8 @@ public class IDCard : MonoBehaviour, IInteractable
 
     [SerializeField] private Vector3 _zoomRotation;
 
-    [SerializeField] private Transform _cameraObservePoint;
+    [SerializeField] private Camera _cameraObservePoint;
+    [SerializeField] private Vector3 _cameraOffset;
 
     private bool _waitForInput = false;
 
@@ -48,14 +49,18 @@ public class IDCard : MonoBehaviour, IInteractable
 
             yield return new WaitForSeconds(Time.deltaTime);
 
-            transform.position = Vector3.Lerp(transform.position, _cameraObservePoint.position, Mathf.SmoothStep(0, 1, percentageComplete));  //transform position
+            transform.position = Vector3.Lerp(
+                transform.position, 
+                _cameraObservePoint.transform.position + _cameraOffset, 
+                Mathf.SmoothStep(0, 1, percentageComplete)
+                );  //transform position
             transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, _zoomRotation, Mathf.SmoothStep(0, 1, percentageComplete)));   //transform rotation
 
             //Debug.Log($"1: {movableObject.transform.position}, and elapsed time: {elapsedTime} and persentage complete: {percentageComplete}");
 
-            if ((transform.position - _cameraObservePoint.position).magnitude < 0.001f)
+            if ((transform.position - _cameraObservePoint.transform.position - _cameraOffset).magnitude < 0.001f)
             {
-                transform.position = _cameraObservePoint.position;
+                transform.position = _cameraObservePoint.transform.position + _cameraOffset;
                 transform.rotation.SetEulerAngles(_zoomRotation);
 
                 _waitForInput = true;   // Bool to wait for the input for unzooming
