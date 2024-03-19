@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
     public static event Action OnNewEmployeeCame;
 
     [SerializeField] private EmployeeGenerator _employeeGenerator;
+    [SerializeField] private DocumentsGenerator _documentsGenerator;
+
     [SerializeField] private LevelData _levelData;
 
     private int _playerHealth;
@@ -41,6 +43,8 @@ public class LevelManager : MonoBehaviour
 
         _currentEmployee = _employeeGenerator.GetNextEmployee();
         _currentEmployee.DebugShowEmployee();
+
+        _documentsGenerator.InitializeDocument();
     }
 
     public void DecideFateOfTheWorker(bool shouldBeFired)

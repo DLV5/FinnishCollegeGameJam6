@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class DocumentsGenerator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform _infoParent;
+    [SerializeField] private InfoObject _infoPrefab;
+    public void InitializeDocument(Queue<Employee> employees)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (Employee employee in employees)
+        {
+            InfoObject instance = Instantiate(_infoPrefab, _infoParent);
+            instance.Initialize(employee);
+        }
     }
 }

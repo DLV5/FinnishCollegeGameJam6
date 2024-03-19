@@ -18,6 +18,7 @@ public class Interactor : MonoBehaviour
                 if (hit.collider.gameObject.transform.root.gameObject.TryGetComponent(out IInteractable movableObject))
                 {
                     Debug.Log("hit intercatable");
+                    AudioManager.Instance.PlaySFX("Pick");
                     movableObject.Interact();
                 }
             }
