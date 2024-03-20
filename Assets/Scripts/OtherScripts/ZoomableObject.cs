@@ -36,6 +36,7 @@ public class ZoomableObject : MonoBehaviour, IInteractable
     public void Interact()
     {
         GameManager.Instance.IsCurrentlyIntercating = true;
+        AudioManager.Instance.PlaySFX("Pick");
         StartCoroutine(ZoomToCamera());
     }
 

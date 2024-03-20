@@ -10,7 +10,9 @@ public class AudioManager : MonoBehaviour
 
     private static AudioManager _instance;
     public static AudioManager Instance { get { return _instance; } }
-    [SerializeField] private List<AudioObject> _audioObjects = new List<AudioObject>();
+
+    [SerializeField] private AudioData _audioData;
+
     private Dictionary<string, AudioClip> _audios = new Dictionary<string, AudioClip>();
 
     public const string MUSIC_VOLUME_KEY = "musicVolume";
@@ -32,7 +34,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (var obj in _audioObjects)
+        foreach (var obj in _audioData.AudioObjects)
         {
             string remake = obj.audioName.ToLower().Trim(); // clear (no whitespaces, no uppercase) version of AudioCLip name
             if (_audios.ContainsKey(remake))
