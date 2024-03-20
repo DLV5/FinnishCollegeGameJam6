@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DocumentsGenerator : MonoBehaviour
 {
-    [SerializeField] private LevelManager _levelManager;
+    [SerializeField] private PeopleManager _peopleManager;
 
     [SerializeField] private TMP_Text _idName;
     [SerializeField] private TMP_Text _idAge;
@@ -11,12 +11,12 @@ public class DocumentsGenerator : MonoBehaviour
 
     private void OnEnable()
     {
-        _levelManager.OnNewEmployeeCame += SetUpDocuments;
+        _peopleManager.OnNewEmployeeCame += SetUpDocuments;
     }
 
     private void OnDisable()
     {
-        _levelManager.OnNewEmployeeCame -= SetUpDocuments;
+        _peopleManager.OnNewEmployeeCame -= SetUpDocuments;
     }
 
     private void SetUpDocuments(Employee currentEmployee)

@@ -6,10 +6,10 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static event Action OnPlayerDied;
-    public event Action<Employee> OnNewEmployeeCame;
 
     [SerializeField] private EmployeeGenerator _employeeGenerator;
     [SerializeField] private ScheduleGenerator _scheduleGenerator;
+    [SerializeField] private PeopleManager _peopleManager;
 
     [SerializeField] private LevelData _levelData;
 
@@ -21,6 +21,8 @@ public class LevelManager : MonoBehaviour
     private GameObject _loseScreen;
 
     private int _playerHealth;
+
+    private bool _IsNextAllowed = false;
     public int PlayerHealth {
         get => _playerHealth;
         set
@@ -51,6 +53,9 @@ public class LevelManager : MonoBehaviour
 
         PlayerHealth = _levelData.PlayerHealthPoints;
 
+        _peopleManager.OnNewEmployeeCame += delegate { _IsNextAllowed = true; };
+        _peopleManager.OnEmployeeWentAway += delegate { _IsNextAllowed = true; };
+
         InitializeEmployees();
     }
 
@@ -64,27 +69,27 @@ public class LevelManager : MonoBehaviour
         _scheduleGenerator.InitializeSchedule(_employeeGenerator.Employees.ToList());
 
         _currentEmployee = _employeeGenerator.GetNextEmployee();
-        OnNewEmployeeCame?.Invoke(_currentEmployee);
+        _peopleManager.SpawnEmployee(_currentEmployee);
         _currentEmployee.DebugShowEmployee();
 
     }
 
     public void DecideFateOfTheWorker(bool shouldBeFired)
     {
-        if(_currentEmployee.IsLate == shouldBeFired)
+        if (!_IsNextAllowed)
+            return;
+        if(_currentEmployee.IsLate != shouldBeFired)
         {
-            Debug.LogWarning("Correct");
-            _resultText.text = "Correct";
-        } else
-        {
-            Debug.LogWarning("Incorrect");
-            Debug.LogWarning("-1HP");
             _resultText.text = "Incorrect" + " -1HP";
             PlayerHealth--;
-        }
+        } 
+
         try
         {
             _currentEmployee = _employeeGenerator.GetNextEmployee();
+            _peopleManager.RemoveEmployee();
+            _peopleManager.SpawnEmployee( _currentEmployee);
+            _IsNextAllowed = false;
         }
         catch
         {
@@ -94,8 +99,6 @@ public class LevelManager : MonoBehaviour
         }
 
         _currentEmployee.DebugShowEmployee();
-
-        OnNewEmployeeCame?.Invoke(_currentEmployee);
     }
 
     private void UnlockCursorAndFreezeCamera()
