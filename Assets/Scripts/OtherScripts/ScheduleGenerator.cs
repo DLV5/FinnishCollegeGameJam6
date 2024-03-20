@@ -5,12 +5,14 @@ public class ScheduleGenerator : MonoBehaviour
 {
     [SerializeField] private Transform _infoParent;
     [SerializeField] private InfoObject _infoPrefab;
-    public void InitializeSchedule(Queue<Employee> employees)
+    public void InitializeSchedule(List<Employee> employees)
     {
-        foreach (Employee employee in employees)
+        while (employees.Count > 0)
         {
             InfoObject instance = Instantiate(_infoPrefab, _infoParent);
-            instance.Initialize(employee);
+            int randomIndex = Random.Range(0, employees.Count);
+            instance.Initialize(employees[randomIndex]);
+            employees.RemoveAt(randomIndex);
         }
     }
 }

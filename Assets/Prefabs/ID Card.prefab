@@ -728,8 +728,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4528864671431241305}
-  - component: {fileID: 7373036477614343138}
-  - component: {fileID: 3287302435957451749}
+  - component: {fileID: 2476003123367340364}
+  - component: {fileID: 744313140049812382}
+  - component: {fileID: 5749702514109216373}
   m_Layer: 0
   m_Name: ID Card
   m_TagString: Untagged
@@ -753,28 +754,7 @@ Transform:
   - {fileID: 2088837996274218423}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7373036477614343138
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8080859591992867440}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.4302423, y: 0.25151068, z: 0.048147492}
-  m_Center: {x: 0.0057290867, y: 0.0051891804, z: 0.0013230704}
---- !u!114 &3287302435957451749
+--- !u!114 &2476003123367340364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -783,8 +763,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 8080859591992867440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c486f553ce8f6145b3b2079e7bd2471, type: 3}
+  m_Script: {fileID: 11500000, guid: a3c59c65b8fa6814da439de29be567c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zoomRotation: {x: 0, y: 0, z: 0}
-  _cameraObservePoint: {fileID: 0}
+  _grabRotation: {x: 90, y: 90, z: 0}
+--- !u!54 &744313140049812382
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080859591992867440}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5749702514109216373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080859591992867440}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51089e322390284487ca6814dce6c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

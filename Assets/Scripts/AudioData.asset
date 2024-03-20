@@ -17,3 +17,5 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: d48f22c358c9b254a82adffd7c60dd25, type: 3}
   - audioName: Pick
     audioClip: {fileID: 8300000, guid: 66dcbc90a9df51046ba067a64d8bcaec, type: 3}
+  - audioName: ButtonClick
+    audioClip: {fileID: 8300000, guid: 3e4a167dec84b8f489ea4e4c8b99783c, type: 3}
