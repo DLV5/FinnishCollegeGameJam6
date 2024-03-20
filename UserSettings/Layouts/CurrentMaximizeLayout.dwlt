@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 65
+  controlID: 23824
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -91,7 +91,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 66
+  controlID: 23825
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 50}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 67
+  controlID: 23826
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -237,9 +237,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 4c18ffff201affff7c98ffff90f3ffff18f5ffffeef9ffffa6fafffff4fffffff8760000607d0000f47e0000d6a70000
+      m_SelectedIDs: f48afdff
+      m_LastClickedID: -161036
+      m_ExpandedIDs: 76ddfdff00defdfff4defdff34e0fdff30eafdff9c1bfefff442feff2270feffb684feffea87feff8890feff4c18ffff201affff7c98ffff90f3ffff18f5ffffeef9ffffa6fafffff4fffffff8760000607d0000f47e0000d6a7000062d90000f2d90000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -684,9 +684,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.45430225, y: 1.437236, z: 1.8886837}
+    m_Target: {x: -0.7503494, y: 1.0864539, z: 2.582937}
     speed: 2
-    m_Value: {x: -0.45430225, y: 1.437236, z: 1.8886837}
+    m_Value: {x: -0.7503494, y: 1.0864539, z: 2.582937}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -732,13 +732,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.09744474, y: 0.9001351, z: -0.33297855, w: -0.2634236}
+    m_Target: {x: -0.17178036, y: 0.3849214, z: -0.07315405, w: -0.9038712}
     speed: 2
-    m_Value: {x: -0.09744449, y: 0.9001327, z: -0.33297768, w: -0.2634229}
+    m_Value: {x: -0.1717797, y: 0.38491994, z: -0.07315377, w: -0.9038677}
   m_Size:
-    m_Target: 0.57160395
+    m_Target: 0.7016616
     speed: 2
-    m_Value: 0.57160395
+    m_Value: 0.7016616
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -937,7 +937,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/OtherScripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -945,16 +945,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/OtherScripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Dmitrii.Ivanov\Documents\Unity\FinnishCollegeGameJam6
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: f27c0000
-    m_LastClickedID: 31986
-    m_ExpandedIDs: 000000009e7c0000a07c0000a27c0000a47c0000f27c000000ca9a3bffffff7f
+    m_SelectedIDs: 427f0000
+    m_LastClickedID: 32578
+    m_ExpandedIDs: 000000009e7c0000a07c0000a27c0000a47c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -982,7 +982,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009e7c0000a07c0000a27c0000a47c0000
+    m_ExpandedIDs: 000000009e7c0000a07c0000a27c0000a47c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1007,9 +1007,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e27e0000
-    m_LastClickedInstanceID: 32482
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000b4e20000ee5c010000000000ec100100324d0200304d0200086b0000220e0200f23f0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1108,7 +1108,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 32482
+  m_LastSelectedObjectID: -161036
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52

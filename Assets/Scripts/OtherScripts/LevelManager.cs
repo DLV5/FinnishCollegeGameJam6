@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -60,11 +61,12 @@ public class LevelManager : MonoBehaviour
             _employeeGenerator.GenerateEmployee();
         }
 
+        _scheduleGenerator.InitializeSchedule(_employeeGenerator.Employees.ToList());
+
         _currentEmployee = _employeeGenerator.GetNextEmployee();
         OnNewEmployeeCame?.Invoke(_currentEmployee);
         _currentEmployee.DebugShowEmployee();
 
-        _scheduleGenerator.InitializeSchedule(_employeeGenerator.Employees);
     }
 
     public void DecideFateOfTheWorker(bool shouldBeFired)
