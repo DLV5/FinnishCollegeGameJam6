@@ -790,6 +790,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368298666}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &391155528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 391155529}
+  m_Layer: 0
+  m_Name: Object respawn point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &391155529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391155528}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.159, y: 1.657, z: 1.208}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &411266287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,6 +1860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 8694796064069259869, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 391155529}
     m_RemovedComponents:
     - {fileID: 7373036477614343138, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
     m_RemovedGameObjects:
@@ -2681,7 +2716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147412047777586730, guid: 0bcad0dcea095ae4f9984b8acf36b625, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3675,6 +3710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ID Card
       objectReference: {fileID: 0}
+    - target: {fileID: 8694796064069259869, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 391155529}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4049,3 +4088,4 @@ SceneRoots:
   - {fileID: 811174955}
   - {fileID: 1626855619}
   - {fileID: 1966156292}
+  - {fileID: 391155529}
