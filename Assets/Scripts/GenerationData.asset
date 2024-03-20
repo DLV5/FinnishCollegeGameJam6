@@ -27,9 +27,9 @@ MonoBehaviour:
   - Swift
   - Macklonny
   MaleSprites:
-  - {fileID: 21300000, guid: f3b64239ba8c9dd44ad9e87ac2fdeebf, type: 3}
+  - {fileID: 21300000, guid: dc6aa43e064fa1e45b625407db2a931d, type: 3}
   FemaleSprites:
-  - {fileID: 21300000, guid: f3b64239ba8c9dd44ad9e87ac2fdeebf, type: 3}
+  - {fileID: 21300000, guid: 606d3825bf068204299e8e7605b37706, type: 3}
   ProbabilityOfBeingLate: 0.5
   Excuses:
   - I fed my dog

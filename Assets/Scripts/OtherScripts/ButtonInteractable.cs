@@ -14,6 +14,7 @@ public class ButtonInteractable : MonoBehaviour, IInteractable
     public void Interact()
     {
         Debug.Log("Interacting");
+        AudioManager.Instance.PlaySFX("ButtonClick");
         _levelManager.DecideFateOfTheWorker(_shouldFireWorker);
     }
 }

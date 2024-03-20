@@ -4,7 +4,7 @@ public class Interactor : MonoBehaviour
 {
     private void Update()
     {
-        if (GameManager.Instance.IsCurrentlyIntercating)
+        if (GameManager.Instance != null && GameManager.Instance.IsCurrentlyIntercating)
             return;
 
         if (Input.GetMouseButtonDown(0))
@@ -18,7 +18,6 @@ public class Interactor : MonoBehaviour
                 if (hit.collider.gameObject.transform.root.gameObject.TryGetComponent(out IInteractable movableObject))
                 {
                     Debug.Log("hit intercatable");
-                    AudioManager.Instance.PlaySFX("Pick");
                     movableObject.Interact();
                 }
             }
