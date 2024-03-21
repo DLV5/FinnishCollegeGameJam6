@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody))]
 public class ObjectGrabbable : MonoBehaviour
 {
+    public static event Action OnGrabbed;
+    public static event Action OnReleased;
+
     private Rigidbody objectRigidbody;
     private ObjectLookAt objectLookAt;
     private Transform objectGrabPointTransform;
@@ -19,6 +23,8 @@ public class ObjectGrabbable : MonoBehaviour
         objectRigidbody.useGravity = false;
 
         objectLookAt.enabled = true;
+
+        OnGrabbed?.Invoke();
     }
 
     public void Drop()
@@ -27,6 +33,8 @@ public class ObjectGrabbable : MonoBehaviour
         objectRigidbody.useGravity = true;
 
         objectLookAt.enabled = false;
+
+        OnReleased?.Invoke();
     }
 
     private void FixedUpdate()

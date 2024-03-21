@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: dc6aa43e064fa1e45b625407db2a931d, type: 3}
   FemaleTextures:
   - {fileID: 2800000, guid: 606d3825bf068204299e8e7605b37706, type: 3}
-  ProbabilityOfBeingLate: 0.5
+  ProbabilityOfBeingLate: 0.15
   Excuses:
   - I fed my dog
   - I ate hambugers

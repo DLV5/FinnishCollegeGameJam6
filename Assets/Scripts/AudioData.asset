@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioObjects:
   - audioName: BackgroundMusic
-    audioClip: {fileID: 8300000, guid: d48f22c358c9b254a82adffd7c60dd25, type: 3}
+    audioClip: {fileID: 8300000, guid: 46641488cee4a774ebc22dc296e2767e, type: 3}
   - audioName: Pick
     audioClip: {fileID: 8300000, guid: 66dcbc90a9df51046ba067a64d8bcaec, type: 3}
   - audioName: ButtonClick

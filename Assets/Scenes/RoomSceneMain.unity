@@ -798,7 +798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4528864671431241305, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.269
+      value: -0.237
       objectReference: {fileID: 0}
     - target: {fileID: 4528864671431241305, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -806,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4528864671431241305, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.307
+      value: 1.578
       objectReference: {fileID: 0}
     - target: {fileID: 4528864671431241305, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1175811497984921487, guid: 8e3091a5661078849be23b40bb44cd63, type: 3}
   m_PrefabInstance: {fileID: 8177504770723485805}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1087046219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05724b75a50b3ba45ba905db04376598, type: 3}
@@ -1810,6 +1810,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1383400599}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
+--- !u!1 &1087046219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8772854508998728123, guid: 8e3091a5661078849be23b40bb44cd63, type: 3}
+  m_PrefabInstance: {fileID: 8177504770723485805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1087046229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087046219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bdd1e60f7096d84a87b0e3a0c68a155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 391155529}
+--- !u!114 &1087046230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087046219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316d6e6f7d481ec4e9db0fb256311c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ObjectDescription>k__BackingField: Check schedule
 --- !u!1001 &1201094997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1820,13 +1851,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 419318682147393403, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_text
-      value: 'Congradulations with your new role as a FireExpert in our great company.
-        Since today you''ll have to check is everybody arrivet before 9:00 AM. Fire
-        everyone who was late than this time. You can find ID card on a table. There
-        is also shedule.
+      value: 'Congratulations on your new role as a FireExpert in our great company.
+        From today, you''ll be checking that everyone arrives before 9:00. Fire anyone
+        who is later than that. You will find your badge on a table. There is also
+        a timetable in your tablet.
 
-        And remember Green button to let them go and Red
-        button to fire them!'
+        And remember the green button to release
+        them and the red button to fire them! Don''t press the red button if you
+        don''t have to!!!!!!'
       objectReference: {fileID: 0}
     - target: {fileID: 419318682147393403, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_fontSize
@@ -1930,7 +1962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4528864671431241305, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: -0.273
       objectReference: {fileID: 0}
     - target: {fileID: 4528864671431241305, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1938,7 +1970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4528864671431241305, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.434
+      value: 1.098
       objectReference: {fileID: 0}
     - target: {fileID: 4528864671431241305, guid: 25a575d01b8f6394dae2c26fb80cefe2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3361,6 +3393,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5249624744235014566, guid: 0bcad0dcea095ae4f9984b8acf36b625, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46641488cee4a774ebc22dc296e2767e, type: 3}
     - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.3591755
@@ -6745,7 +6781,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8772854508998728123, guid: 8e3091a5661078849be23b40bb44cd63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1087046229}
+    - targetCorrespondingSourceObject: {fileID: 8772854508998728123, guid: 8e3091a5661078849be23b40bb44cd63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1087046230}
   m_SourcePrefab: {fileID: 100100000, guid: 8e3091a5661078849be23b40bb44cd63, type: 3}
 --- !u!4 &8410399374748260491
 Transform:
