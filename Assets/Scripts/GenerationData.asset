@@ -50,8 +50,21 @@ MonoBehaviour:
   - Aniston
   MaleTextures:
   - {fileID: 2800000, guid: dc6aa43e064fa1e45b625407db2a931d, type: 3}
+  - {fileID: 2800000, guid: 018ccb6d7889d2241ba4c9ee1a3ab99c, type: 3}
+  - {fileID: 2800000, guid: 36a4f263dc95d6945883911577d5d805, type: 3}
+  - {fileID: 2800000, guid: 6fd27f6f35dfdd3489fd2427d8488aa1, type: 3}
+  - {fileID: 2800000, guid: 2eab12108d5a06d4694bb6ca7d67c5c1, type: 3}
+  - {fileID: 2800000, guid: 5541ad608b9524d47a49831486a69f14, type: 3}
+  - {fileID: 2800000, guid: c46ab03e94318a34484ac5afd68447c2, type: 3}
+  - {fileID: 2800000, guid: 3f71c69c5c9930643b199146649f128c, type: 3}
   FemaleTextures:
   - {fileID: 2800000, guid: 606d3825bf068204299e8e7605b37706, type: 3}
+  - {fileID: 2800000, guid: 2582a61745e13414cacb2cdd701e04eb, type: 3}
+  - {fileID: 2800000, guid: 4409dc186da6ade4ea5ac92267616f11, type: 3}
+  - {fileID: 2800000, guid: 005da66dad8a0a94383d3e936d050ae9, type: 3}
+  - {fileID: 2800000, guid: 4e063e1a8f83b19489b4164e5e169f50, type: 3}
+  - {fileID: 2800000, guid: b475b2c46b5156f47b167f20394d8cb1, type: 3}
+  - {fileID: 2800000, guid: 16d59a660be9360469faecfe4579209c, type: 3}
   ProbabilityOfBeingLate: 0.15
   Excuses:
   - I fed my dog

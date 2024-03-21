@@ -46,7 +46,7 @@ public class EmployeeObject : MonoBehaviour
         {
             yield return Time.deltaTime;
             elapsedTime += Time.deltaTime;
-            procentageComplete = elapsedTime / _speed;
+            procentageComplete = elapsedTime / 4f;
             transform.position = Vector3.Lerp(transform.position, _startPoint.position, procentageComplete);
             if((transform.position - _startPoint.position).magnitude < 0.1f)
             {
@@ -90,7 +90,7 @@ public class EmployeeObject : MonoBehaviour
         {
             yield return Time.deltaTime;
             elapsedTime += Time.deltaTime;
-            procentageComplete = elapsedTime / _speed;
+            procentageComplete = elapsedTime / 4f;
             transform.position = Vector3.Lerp(transform.position, _destroyPoint.position, procentageComplete);
             if ((transform.position - _destroyPoint.position).magnitude < 0.1f)
             {

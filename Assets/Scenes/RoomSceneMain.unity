@@ -1174,7 +1174,7 @@ SpriteRenderer:
   m_Size: {x: 37.447735, y: 51.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &597633879
@@ -2177,7 +2177,7 @@ MonoBehaviour:
   _employeeObjectFactory: {fileID: 11400000, guid: 5c4487eaaf07e9c468e94eeab83a5a25, type: 2}
   _employeeParent: {fileID: 1628870753}
   _employeePrefab: {fileID: 3406502923153404045, guid: eca5ed1233bcf0f4fb7397667625f331, type: 3}
-  _speed: 7
+  _speed: 30
   _initialPoint: {fileID: 332747191}
   _startPoint: {fileID: 1489482286}
   _waitPoint: {fileID: 1312876532}
