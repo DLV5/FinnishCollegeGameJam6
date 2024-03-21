@@ -63,7 +63,7 @@ public class PeopleManager : MonoBehaviour
     }
     public void DecideFateOfTheWorker(bool shouldBeFired)
     {
-        if (!_isCurrentlyProsessing)
+        if (!_isCurrentlyProsessing || GameManager.Instance.State != GameState.Playing)
             return;
 
         if (_currentEmployee.Employee.IsLate == shouldBeFired)

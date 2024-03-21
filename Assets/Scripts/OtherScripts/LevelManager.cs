@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
             _playerHealth = value;
             if(_playerHealth <= 0)
             {
+                GameManager.Instance.State = GameState.NotPlaying;
                 Debug.LogWarning("Show lose screen");
                 _loseScreen.SetActive(true);
                 UnlockCursorAndFreezeCamera();
@@ -55,6 +56,7 @@ public class LevelManager : MonoBehaviour
     }
     public void ShowWinScreen()
     {
+        GameManager.Instance.State = GameState.NotPlaying;
         _winScreen.SetActive(true);
         UnlockCursorAndFreezeCamera();
     }
