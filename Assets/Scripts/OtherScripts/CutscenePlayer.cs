@@ -23,6 +23,8 @@ public class CutscenePlayer : MonoBehaviour
         if (IsCutsceneCurrentlyPlaying)
             yield break;
 
+        OnCutsceneStarted?.Invoke();
+
         IsCutsceneCurrentlyPlaying = true;
 
         StartCoroutine(TurnLightsOff(1f));
@@ -33,9 +35,9 @@ public class CutscenePlayer : MonoBehaviour
 
         AudioManager.Instance.PlaySFX("FireEmployee");
 
-        yield return new WaitForSeconds(12f);
+        yield return new WaitForSeconds(13f);
 
-        StartCoroutine(TurnLightsOn(1f));
+        StartCoroutine(TurnLightsOn(.5f));
 
         yield return new WaitForSeconds(1f);
 
@@ -44,8 +46,11 @@ public class CutscenePlayer : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         AudioManager.Instance.ResumeMusic();
+        AudioManager.Instance.PlayMusic("BackgroundMusic");
 
         IsCutsceneCurrentlyPlaying = false;
+
+        OnCutsceneEnded?.Invoke();
     }
 
     private IEnumerator TurnLightsOff(float delay)

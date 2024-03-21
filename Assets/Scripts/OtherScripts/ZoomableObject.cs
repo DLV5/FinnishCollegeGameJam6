@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
+
+[RequireComponent(typeof(DynamicObjectDescription))]
 public class ZoomableObject : MonoBehaviour, IInteractable
 {
     private Vector3 _initialPosition;
@@ -30,7 +32,6 @@ public class ZoomableObject : MonoBehaviour, IInteractable
             StartCoroutine(UnzoomFromCamera());
             _waitForInput = false;
        }
-  
     }
 
     public void Interact()

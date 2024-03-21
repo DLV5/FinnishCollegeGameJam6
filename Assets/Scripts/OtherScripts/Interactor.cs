@@ -6,6 +6,8 @@ public class Interactor : MonoBehaviour
     {
         if (GameManager.Instance != null && GameManager.Instance.IsCurrentlyIntercating)
             return;
+        if(GameManager.Instance.State == GameState.NotPlaying)
+            return;
 
         if (CutscenePlayer.IsCutsceneCurrentlyPlaying)
             return;

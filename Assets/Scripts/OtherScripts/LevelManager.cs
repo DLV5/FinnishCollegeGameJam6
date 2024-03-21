@@ -1,26 +1,24 @@
 using System;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
     public static event Action OnPlayerDied;
-    public event Action<Employee> OnNewEmployeeCame;
 
     [SerializeField] private EmployeeGenerator _employeeGenerator;
     [SerializeField] private ScheduleGenerator _scheduleGenerator;
+    [SerializeField] private PeopleManager _peopleManager;
 
     [SerializeField] private LevelData _levelData;
 
     [SerializeField] private FirstPersonCamera _camera;
 
-    [SerializeField] private TMP_Text _resultText;
-
     private GameObject _winScreen;
     private GameObject _loseScreen;
 
     private int _playerHealth;
+
     public int PlayerHealth {
         get => _playerHealth;
         set
@@ -28,6 +26,7 @@ public class LevelManager : MonoBehaviour
             _playerHealth = value;
             if(_playerHealth <= 0)
             {
+                GameManager.Instance.State = GameState.NotPlaying;
                 Debug.LogWarning("Show lose screen");
                 _loseScreen.SetActive(true);
                 UnlockCursorAndFreezeCamera();
@@ -35,6 +34,8 @@ public class LevelManager : MonoBehaviour
             }
         }
     }
+
+    private bool _IsProcessingEmployee;
 
     private Employee _currentEmployee;
 
@@ -44,7 +45,6 @@ public class LevelManager : MonoBehaviour
     {
         _winScreen = GameObject.Find("WinScreen");
         _loseScreen = GameObject.Find("LoseScreen"); 
-        _resultText = GameObject.Find("ResultText").GetComponent<TMP_Text>();
 
         _winScreen.SetActive(false);
         _loseScreen.SetActive(false);
@@ -52,6 +52,13 @@ public class LevelManager : MonoBehaviour
         PlayerHealth = _levelData.PlayerHealthPoints;
 
         InitializeEmployees();
+        InitializeGameplayLoop();
+    }
+    public void ShowWinScreen()
+    {
+        GameManager.Instance.State = GameState.NotPlaying;
+        _winScreen.SetActive(true);
+        UnlockCursorAndFreezeCamera();
     }
 
     private void InitializeEmployees()
@@ -61,41 +68,13 @@ public class LevelManager : MonoBehaviour
             _employeeGenerator.GenerateEmployee();
         }
 
-        _scheduleGenerator.InitializeSchedule(_employeeGenerator.Employees.ToList());
-
-        _currentEmployee = _employeeGenerator.GetNextEmployee();
-        OnNewEmployeeCame?.Invoke(_currentEmployee);
-        _currentEmployee.DebugShowEmployee();
-
+        _scheduleGenerator.InitializeSchedule(_employeeGenerator.Employees);
     }
 
-    public void DecideFateOfTheWorker(bool shouldBeFired)
+    private void InitializeGameplayLoop()
     {
-        if(_currentEmployee.IsLate == shouldBeFired)
-        {
-            Debug.LogWarning("Correct");
-            _resultText.text = "Correct";
-        } else
-        {
-            Debug.LogWarning("Incorrect");
-            Debug.LogWarning("-1HP");
-            _resultText.text = "Incorrect" + " -1HP";
-            PlayerHealth--;
-        }
-        try
-        {
-            _currentEmployee = _employeeGenerator.GetNextEmployee();
-        }
-        catch
-        {
-            Debug.LogWarning("Show win screen");
-            _winScreen.SetActive(true);
-            UnlockCursorAndFreezeCamera();
-        }
-
-        _currentEmployee.DebugShowEmployee();
-
-        OnNewEmployeeCame?.Invoke(_currentEmployee);
+        _peopleManager.StartSpawningEmployees(_employeeGenerator, this);
+        Debug.Log(" InitializeGameplayLoop ");
     }
 
     private void UnlockCursorAndFreezeCamera()

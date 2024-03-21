@@ -12,8 +12,8 @@ public class GenerationData : ScriptableObject
     public List<string> Surnames;
 
     [Header("Sprites")]
-    public List<Sprite> MaleSprites;
-    public List<Sprite> FemaleSprites;
+    public List<Texture> MaleTextures;
+    public List<Texture> FemaleTextures;
 
     [Header("Other")]
     [Range(0, 1)]public float ProbabilityOfBeingLate;

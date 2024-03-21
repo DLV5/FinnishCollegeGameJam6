@@ -23,13 +23,17 @@ public class EmployeeGenerator : MonoBehaviour
         Gender gender = (Gender)UnityEngine.Random.Range(0, 2);
 
         string name;
+        Texture look;
 
         if (gender == Gender.Male)
         {
             name = _data.MaleNames[UnityEngine.Random.Range(0, _data.MaleNames.Count)];
+            look = _data.MaleTextures[UnityEngine.Random.Range(0, _data.MaleTextures.Count)];
+
         } else
         {
             name = _data.FemaleNames[UnityEngine.Random.Range(0, _data.FemaleNames.Count)];
+            look = _data.FemaleTextures[UnityEngine.Random.Range(0, _data.FemaleTextures.Count)];
         }
 
         string surname = _data.Surnames[UnityEngine.Random.Range(0, _data.Surnames.Count)];
@@ -43,6 +47,7 @@ public class EmployeeGenerator : MonoBehaviour
         Employee worker = new Employee(
             name, 
             surname, 
+            look,
             dateOfBirth, 
             arrivalTime, 
             IsEmployeeLate(arrivalTime), 

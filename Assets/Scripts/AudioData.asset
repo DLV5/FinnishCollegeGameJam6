@@ -27,3 +27,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 0d6db5d36172f2a43a8ee1f4d10f0cc8, type: 3}
   - audioName: FireEmployee
     audioClip: {fileID: 8300000, guid: a8b65226a761255438ea62c4faa0ddd9, type: 3}
+  - audioName: Incorrect
+    audioClip: {fileID: 8300000, guid: 837a4f668be3b014fbfab9f79ea1f604, type: 3}
+  - audioName: Correct
+    audioClip: {fileID: 8300000, guid: 2654b5781657a9d41adf97ce2b664d8e, type: 3}
