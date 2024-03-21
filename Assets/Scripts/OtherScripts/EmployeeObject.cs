@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EmployeeObject : MonoBehaviour
@@ -7,7 +8,11 @@ public class EmployeeObject : MonoBehaviour
     public event Action OnPlaceArrived;
     public Employee Employee { get; private set; }
 
+    [SerializeField] private Material _previousLook;
     [SerializeField] private Material _look;
+
+    [SerializeField] private MeshRenderer _renderer;
+
     private Transform _initialPoint;
     private Transform _startPoint;
     private Transform _waitPoint;
@@ -16,10 +21,24 @@ public class EmployeeObject : MonoBehaviour
 
     private float _speed;
 
+    private static Queue<Material> _materials = new Queue<Material>();
+
+    private void Awake()
+    {
+        if (_materials.Count != 0)
+            return;
+        _materials.Enqueue(_look);
+        _materials.Enqueue(_previousLook);
+    }
+
     public void SetUp(Employee employee, Transform initialPoint, Transform startPoint, Transform waitPoint, Transform endPoint, Transform destroyPoint)
     {
         Employee = employee;
-        _look.mainTexture = employee.Look;
+
+        Material mainMaterial = _materials.Dequeue();
+        mainMaterial.mainTexture = employee.Look;
+        _renderer.material = mainMaterial;
+        _materials.Enqueue(mainMaterial);
 
         _initialPoint = initialPoint;
         _startPoint = startPoint;

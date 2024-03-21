@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6ded5b22762bf41ba69774984cc54e, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  NumberOfPeopleToWin: 9
+  NumberOfPeopleToWin: 10
   DeadlineTimeHours: 9
   DeadlineTimeMinutes: 0
   PlayerHealthPoints: 3
