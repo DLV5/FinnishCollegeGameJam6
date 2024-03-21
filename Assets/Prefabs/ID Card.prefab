@@ -806,6 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51089e322390284487ca6814dce6c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shouldBeFlipped: 0
 --- !u!114 &8694796064069259869
 MonoBehaviour:
   m_ObjectHideFlags: 0

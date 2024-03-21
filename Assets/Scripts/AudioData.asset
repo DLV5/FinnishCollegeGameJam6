@@ -19,3 +19,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 66dcbc90a9df51046ba067a64d8bcaec, type: 3}
   - audioName: ButtonClick
     audioClip: {fileID: 8300000, guid: 3e4a167dec84b8f489ea4e4c8b99783c, type: 3}
+  - audioName: TurnLightOn
+    audioClip: {fileID: 8300000, guid: de3c1f4bfb071e440bb7aa724160284f, type: 3}
+  - audioName: TurnLightOff
+    audioClip: {fileID: 8300000, guid: 0d6db5d36172f2a43a8ee1f4d10f0cc8, type: 3}

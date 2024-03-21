@@ -11,6 +11,9 @@ public class HoldInteractor : MonoBehaviour
     {
         if (GameManager.Instance != null && GameManager.Instance.IsCurrentlyIntercating)
             return;
+        
+        if (CutscenePlayer.IsCutsceneCurrentlyPlaying)
+            return;
 
         if (_objectGrabbable != null)
         {

@@ -66,7 +66,12 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(string audioName)
     {
         _musicSource.clip = (GetAudio(audioName));
-        if (_sfxSource.clip != null)
+        if (_musicSource.clip != null)
             _musicSource.Play();
+    }
+
+    public void StopPlayMusic()
+    {
+        _musicSource.Stop();
     }
 }

@@ -7,6 +7,9 @@ public class Interactor : MonoBehaviour
         if (GameManager.Instance != null && GameManager.Instance.IsCurrentlyIntercating)
             return;
 
+        if (CutscenePlayer.IsCutsceneCurrentlyPlaying)
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = new Ray(transform.position, transform.forward);
