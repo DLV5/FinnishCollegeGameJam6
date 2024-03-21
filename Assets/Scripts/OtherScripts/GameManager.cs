@@ -18,4 +18,5 @@ public class GameManager : MonoBehaviour
     }
     public bool IsCurrentlyIntercating;
     public float ZoomSpeed;
+    
 }

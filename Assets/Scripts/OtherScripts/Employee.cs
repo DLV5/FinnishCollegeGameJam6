@@ -6,6 +6,7 @@ public class Employee
 {
     public string Name {  get; private set; }
     public string Surname { get; private set; }
+    public Sprite Look { get; private set; }
 
     public int Age {  get; private set; }
     public Gender Gender {  get; private set; }
@@ -15,10 +16,11 @@ public class Employee
     public bool IsLate {  get; private set; }
     public string ReasonForBeingLate { get; private set; }
 
-    public Employee(string name, string surname, DateTime dateOfBirth, DateTime arrivedAtTime, bool isLate, string reasonForBeingLate)
+    public Employee(string name, string surname, Sprite look, DateTime dateOfBirth, DateTime arrivedAtTime, bool isLate, string reasonForBeingLate)
     {
         Name = name;
         Surname = surname;
+        Look = look;
         DateOfBirth = dateOfBirth;
         Age = DateTime.Now.Year - dateOfBirth.Year;
 
