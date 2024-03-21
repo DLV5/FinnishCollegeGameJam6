@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FogAdjuster : MonoBehaviour
 {
-    private float _normalFogLevel = 0.35f;
+    private float _normalFogLevel = 0.2f;
     private float _darkFogLevel = 1f;
 
     private float _speed = 1f;

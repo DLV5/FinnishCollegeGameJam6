@@ -31,9 +31,19 @@ public class CutscenePlayer : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
+        AudioManager.Instance.PlaySFX("FireEmployee");
+
+        yield return new WaitForSeconds(12f);
+
         StartCoroutine(TurnLightsOn(1f));
-        
+
+        yield return new WaitForSeconds(1f);
+
         _fogAdjuster.FogFadeOut();
+
+        yield return new WaitForSeconds(1f);
+
+        AudioManager.Instance.ResumeMusic();
 
         IsCutsceneCurrentlyPlaying = false;
     }

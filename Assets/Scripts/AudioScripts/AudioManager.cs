@@ -74,4 +74,9 @@ public class AudioManager : MonoBehaviour
     {
         _musicSource.Stop();
     }
+
+    public void ResumeMusic()
+    {
+        _musicSource.UnPause();
+    }
 }
