@@ -14,8 +14,6 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private FirstPersonCamera _camera;
 
-    [SerializeField] private TMP_Text _resultText;
-
     private GameObject _winScreen;
     private GameObject _loseScreen;
 
@@ -46,7 +44,6 @@ public class LevelManager : MonoBehaviour
     {
         _winScreen = GameObject.Find("WinScreen");
         _loseScreen = GameObject.Find("LoseScreen"); 
-        _resultText = GameObject.Find("ResultText").GetComponent<TMP_Text>();
 
         _winScreen.SetActive(false);
         _loseScreen.SetActive(false);
@@ -55,6 +52,11 @@ public class LevelManager : MonoBehaviour
 
         InitializeEmployees();
         InitializeGameplayLoop();
+    }
+    public void ShowWinScreen()
+    {
+        _winScreen.SetActive(true);
+        UnlockCursorAndFreezeCamera();
     }
 
     private void InitializeEmployees()
@@ -69,7 +71,7 @@ public class LevelManager : MonoBehaviour
 
     private void InitializeGameplayLoop()
     {
-        _peopleManager.StartSpawningEmployees(_employeeGenerator);
+        _peopleManager.StartSpawningEmployees(_employeeGenerator, this);
         Debug.Log(" InitializeGameplayLoop ");
     }
 

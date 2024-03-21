@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PeopleManager : MonoBehaviour
@@ -21,15 +22,21 @@ public class PeopleManager : MonoBehaviour
     [SerializeField] private Transform _endPoint;
     [SerializeField] private Transform _destroyPoint;
 
-    private HealthManager HealthManager;
+    private TMP_Text _resultText;
+
+    private LevelManager _levelManager;
     private EmployeeGenerator _employeeGenerator;
+
     private EmployeeObject _currentEmployee;
 
     private bool _isCurrentlyProsessing;
 
-    public void StartSpawningEmployees(EmployeeGenerator employeeGenerator)
+    public void StartSpawningEmployees(EmployeeGenerator employeeGenerator, LevelManager levelManager)
     {
+        _resultText = GameObject.Find("ResultText").GetComponent<TMP_Text>();
+
         _employeeGenerator = employeeGenerator;
+        _levelManager = levelManager;
 
         _employeeObjectFactory = new EmployeeObjectFactory(_employeeParent, _employeePrefab);
 
@@ -61,14 +68,12 @@ public class PeopleManager : MonoBehaviour
 
         if (_currentEmployee.Employee.IsLate == shouldBeFired)
         {
-            Debug.LogWarning("Correct");
+            _resultText.text = "Correct";
         }
         else
         {
-            Debug.LogWarning("Incorrect");
-            Debug.LogWarning("-1HP");
-            //_resultText.text = "Incorrect" + " -1HP";
-            //PlayerHealth--;
+            _resultText.text = "Incorrect" + " -1HP";
+            _levelManager.PlayerHealth--;
         }
 
         RemoveCurrentEmployee();
@@ -79,9 +84,9 @@ public class PeopleManager : MonoBehaviour
         }
         catch
         {
-            Debug.LogWarning("Show win screen");
-            //_winScreen.SetActive(true);
-            //UnlockCursorAndFreezeCamera();
+            _isCurrentlyProsessing = false;
+            _resultText.text = "You Won! ";
+            _levelManager.ShowWinScreen();
         }
     }
 }
