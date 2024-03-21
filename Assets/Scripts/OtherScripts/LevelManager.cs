@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -22,7 +21,6 @@ public class LevelManager : MonoBehaviour
 
     private int _playerHealth;
 
-    private bool _IsNextAllowed = false;
     public int PlayerHealth {
         get => _playerHealth;
         set
@@ -37,6 +35,8 @@ public class LevelManager : MonoBehaviour
             }
         }
     }
+
+    private bool _IsProcessingEmployee;
 
     private Employee _currentEmployee;
 
@@ -53,10 +53,8 @@ public class LevelManager : MonoBehaviour
 
         PlayerHealth = _levelData.PlayerHealthPoints;
 
-        _peopleManager.OnNewEmployeeCame += delegate { _IsNextAllowed = true; };
-        _peopleManager.OnEmployeeWentAway += delegate { _IsNextAllowed = true; };
-
         InitializeEmployees();
+        InitializeGameplayLoop();
     }
 
     private void InitializeEmployees()
@@ -66,39 +64,13 @@ public class LevelManager : MonoBehaviour
             _employeeGenerator.GenerateEmployee();
         }
 
-        _scheduleGenerator.InitializeSchedule(_employeeGenerator.Employees.ToList());
-
-        _currentEmployee = _employeeGenerator.GetNextEmployee();
-        _peopleManager.SpawnEmployee(_currentEmployee);
-        _currentEmployee.DebugShowEmployee();
-
+        _scheduleGenerator.InitializeSchedule(_employeeGenerator.Employees);
     }
 
-    public void DecideFateOfTheWorker(bool shouldBeFired)
+    private void InitializeGameplayLoop()
     {
-        if (!_IsNextAllowed)
-            return;
-        if(_currentEmployee.IsLate != shouldBeFired)
-        {
-            _resultText.text = "Incorrect" + " -1HP";
-            PlayerHealth--;
-        } 
-
-        try
-        {
-            _currentEmployee = _employeeGenerator.GetNextEmployee();
-            _peopleManager.RemoveEmployee();
-            _peopleManager.SpawnEmployee( _currentEmployee);
-            _IsNextAllowed = false;
-        }
-        catch
-        {
-            Debug.LogWarning("Show win screen");
-            _winScreen.SetActive(true);
-            UnlockCursorAndFreezeCamera();
-        }
-
-        _currentEmployee.DebugShowEmployee();
+        _peopleManager.StartSpawningEmployees(_employeeGenerator);
+        Debug.Log(" InitializeGameplayLoop ");
     }
 
     private void UnlockCursorAndFreezeCamera()

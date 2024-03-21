@@ -14,18 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaleNames:
   - John
-  - Carm
+  - Justin
   - Alex
+  - Brian
+  - Ronald
+  - 'Johnny '
+  - Carl
+  - Tom
+  - Steve
+  - Bill
+  - Albert
   FemaleNames:
   - Jenny
   - Poppy
   - Mia
-  - Nency
+  - Nancy
   - Tailor
+  - Addison
+  - Ruby
+  - Brooklyn
+  - Josie
+  - Margaret
+  - Callie
   Surnames:
   - Smith
   - Swift
   - Macklonny
+  - Depp
+  - Larsson
+  - Gates
+  - Hanks
+  - Sandler
+  - Reagan
+  - Clinton
+  - Aniston
   MaleSprites:
   - {fileID: 21300000, guid: dc6aa43e064fa1e45b625407db2a931d, type: 3}
   FemaleSprites:

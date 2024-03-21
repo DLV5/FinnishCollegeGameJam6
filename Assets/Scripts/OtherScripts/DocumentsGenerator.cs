@@ -3,20 +3,18 @@ using UnityEngine;
 
 public class DocumentsGenerator : MonoBehaviour
 {
-    [SerializeField] private PeopleManager _peopleManager;
-
     [SerializeField] private TMP_Text _idName;
     [SerializeField] private TMP_Text _idAge;
     [SerializeField] private TMP_Text _idYearOfBirth;
 
     private void OnEnable()
     {
-        _peopleManager.OnNewEmployeeCame += SetUpDocuments;
+        PeopleManager.OnNewEmployeeCame += SetUpDocuments;
     }
 
     private void OnDisable()
     {
-        _peopleManager.OnNewEmployeeCame -= SetUpDocuments;
+        PeopleManager.OnNewEmployeeCame -= SetUpDocuments;
     }
 
     private void SetUpDocuments(Employee currentEmployee)

@@ -29,8 +29,9 @@ public class EmployeeObject : MonoBehaviour
         _endPoint = endPoint;
         _destroyPoint = destroyPoint;;
     }
-    public void StartMoving()
+    public void StartMoving(float speed)
     {
+        _speed = speed;
         StartCoroutine(MoveToTarget());
     }
 
@@ -95,10 +96,10 @@ public class EmployeeObject : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, _destroyPoint.position, procentageComplete);
             if ((transform.position - _destroyPoint.position).magnitude < 0.1f)
             {
-                Destroy(gameObject);
-                yield break;
+                break;
             }
         }
+        Destroy(gameObject);
     }
 
 }

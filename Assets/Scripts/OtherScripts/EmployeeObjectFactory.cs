@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewEmployeeObjectFactory", menuName = "Employee")]
-public class EmployeeObjectFactory : ScriptableObject
+public class EmployeeObjectFactory: ScriptableObject
 {
-    [SerializeField] private EmployeeObject _prefab;
-    [SerializeField] private Transform _parent;
+    private EmployeeObject _prefab;
+    private Transform _parent;
 
+    public EmployeeObjectFactory(Transform parent, EmployeeObject prefab)
+    {
+        _prefab = prefab;
+        _parent = parent;
+    }
     public EmployeeObject GetEmployee(Employee employee, Transform initialPoint, Transform startPoint, Transform waitPoint, Transform endPoint, Transform destroyPoint)
     {
         EmployeeObject instance = Instantiate(_prefab, _parent);
+        Debug.Log("Made instance" + instance);
         instance.SetUp(employee, initialPoint, startPoint, waitPoint, endPoint, destroyPoint);
         return instance;
     }
