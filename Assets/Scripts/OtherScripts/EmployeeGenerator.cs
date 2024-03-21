@@ -57,7 +57,7 @@ public class EmployeeGenerator : MonoBehaviour
 
     private DateTime GetRandomData()
     {
-        int randomDay = UnityEngine.Random.Range(1, 31);
+        int randomDay = UnityEngine.Random.Range(1, 29);
         int randomMounth = UnityEngine.Random.Range(1, 13);
         int randomYear = UnityEngine.Random.Range(50, 99);
 
