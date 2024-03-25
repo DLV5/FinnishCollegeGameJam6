@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 332747191}
   m_Layer: 0
-  m_Name: Initial Point
+  m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1238,7 +1238,7 @@ Transform:
   m_GameObject: {fileID: 603348994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.35, z: 0.6}
+  m_LocalPosition: {x: 0, y: 1.35, z: 0.267}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2312,7 +2312,7 @@ MonoBehaviour:
   _employeeParent: {fileID: 1628870753}
   _employeePrefab: {fileID: 3406502923153404045, guid: eca5ed1233bcf0f4fb7397667625f331, type: 3}
   _speed: 30
-  _initialPoint: {fileID: 332747191}
+  _spawnPoint: {fileID: 332747191}
   _startPoint: {fileID: 1489482286}
   _waitPoint: {fileID: 1312876532}
   _endPoint: {fileID: 693452812}

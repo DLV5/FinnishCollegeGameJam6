@@ -52,7 +52,8 @@ public class LevelManager : MonoBehaviour
         PlayerHealth = _levelData.PlayerHealthPoints;
 
         InitializeEmployees();
-        InitializeGameplayLoop();
+        SetUpPeopleManager();
+        StartGame();
     }
     public void ShowWinScreen()
     {
@@ -71,11 +72,9 @@ public class LevelManager : MonoBehaviour
         _scheduleGenerator.InitializeSchedule(_employeeGenerator.Employees);
     }
 
-    private void InitializeGameplayLoop()
-    {
-        _peopleManager.StartSpawningEmployees(_employeeGenerator, this);
-        Debug.Log(" InitializeGameplayLoop ");
-    }
+    private void SetUpPeopleManager() => _peopleManager.SetUp(_employeeGenerator, this);
+
+    private void StartGame() => _peopleManager.SpawnNextEmployee();
 
     private void UnlockCursorAndFreezeCamera()
     {

@@ -22,13 +22,15 @@ public class Employee
         Surname = surname;
         Look = look;
         DateOfBirth = dateOfBirth;
-        Age = DateTime.Now.Year - dateOfBirth.Year;
+        Age = CalculateAge(dateOfBirth);
 
         ArrivedAtTime = arrivedAtTime;
         ReasonForBeingLate = reasonForBeingLate;
         
         IsLate = isLate;
     }
+
+    private int CalculateAge(DateTime dateOfBirth) => DateTime.Now.Year - dateOfBirth.Year;
 
     public void DebugShowEmployee()
     {
